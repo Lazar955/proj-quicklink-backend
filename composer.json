@@ -1,0 +1,10 @@
+{
+  "require": {
+    "crada/php-apidoc": "@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Controllers\\": "controllers/"
+    }
+  }
+}
