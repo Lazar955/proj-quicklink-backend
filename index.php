@@ -48,15 +48,18 @@ $users = new MicroCol();
 
 $link = new MicroCol();
 $token = new MicroCol();
+$logs = new MicroCol();
 
 $users->setHandler(new UserController());
 $link->setHandler(new LinkController());
 $token->setHandler(new TokenController());
+$logs->setHandler(new LogController());
 
 // Setting Route prefixes
 $users->setPrefix('/user');
 $link->setPrefix('/link');
 $token->setPrefix('/token');
+$logs->setPrefix('/logs');
 
 // User routes
 $users->post('/register', 'register');
@@ -73,9 +76,13 @@ $link->post('/edit', 'editLink');
 // token routes
 $token->post('/create', 'create');
 
+//logs routes
+$logs->get('/{id}', 'getLogsByUID');
+
 // Mounting controllers
 $app->mount($users);
 $app->mount($link);
 $app->mount($token);
+$app->mount($logs);
 
 $app->handle();

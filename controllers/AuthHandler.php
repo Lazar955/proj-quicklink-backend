@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 12.4.2016
- * Time: 13:08
- */
+
 class AuthHandler
 {
     public static function authorizeRequest($request, $uc)
